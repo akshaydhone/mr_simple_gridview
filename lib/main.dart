@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       title: 'Flutter GridView',
       home: new Home(),
-      theme: new ThemeData(primaryColor: Colors.deepOrange),
+      theme: new ThemeData(primaryColor: Colors.blue),
     );
   }
 }
@@ -22,7 +22,9 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    var spacecrafts = ["James Web","Enterprise","Hubble","Kepler","Juno","Casini","Columbia","Challenger","Huygens","Galileo","Apollo","Spitzer","WMAP","Swift","Atlantis"];
+    var spacecrafts = ["Mobile","Flights","Movie Ticket","Events","PostPaid","Games","Gold","Electricity","Train ticket","Shopping","DTH","More"];
+    //var spacecrafts=new Image(image: )
+
     var myGridView = new GridView.builder(
       itemCount: spacecrafts.length,
       gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
@@ -31,10 +33,14 @@ class _HomeState extends State<Home> {
           child: new Card(
             elevation: 5.0,
             child: new Container(
-              alignment: Alignment.centerLeft,
-              margin: new EdgeInsets.only(top: 10.0, bottom: 10.0,left: 10.0),
+              alignment: Alignment.bottomCenter,
+              margin: new EdgeInsets.only(top: 10.0, bottom: 10.0,left: 10.0,),
               child: new Text(spacecrafts[index]),
+
             ),
+
+
+
           ),
           onTap: () {
             showDialog(
@@ -46,7 +52,7 @@ class _HomeState extends State<Home> {
                       new Text("GridView"),
                       new Icon(
                         Icons.favorite,
-                        color: Colors.red,
+                        color: Colors.blue,
                       ),
                     ],
                   ),
